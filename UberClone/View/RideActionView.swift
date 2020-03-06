@@ -9,6 +9,10 @@
 import UIKit
 import MapKit
 
+protocol RideActionViewDelegate: class {
+    func uploadTrip(_ view: RideActionView)
+}
+
 class RideActionView: UIView {
     
     // MARK: - Properties
@@ -19,6 +23,8 @@ class RideActionView: UIView {
             addressLabel.text = destination?.address
         }
     }
+    
+    weak var delegate: RideActionViewDelegate?
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -106,13 +112,13 @@ class RideActionView: UIView {
         actionButton.anchor(left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingLeft: 12, paddingBottom: 12, paddingRight: 12, height: 50)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Selectors
     
     @objc func actionButtonPressed() {
-        
+        delegate?.uploadTrip(self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
