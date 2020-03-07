@@ -56,6 +56,7 @@ class HomeController: UIViewController {
             guard let trip = trip else { return }
             let controller = PickupController(trip: trip)
             controller.modalPresentationStyle = .fullScreen
+            controller.delegate = self
             self.present(controller, animated: true, completion: nil)
         }
     }
@@ -76,6 +77,13 @@ class HomeController: UIViewController {
         }
         checkIfUserIsLoggedIn()
         enableLocatioServices()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let trip = trip else { return }
+        print("DEBUG: \(trip.state)")
+        
     }
     
     // MARK: - Selectors
@@ -417,6 +425,7 @@ extension HomeController: UITableViewDelegate,UITableViewDataSource {
         }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedPlacemark = searchResult[indexPath.row]
         
@@ -429,7 +438,7 @@ extension HomeController: UITableViewDelegate,UITableViewDataSource {
             let annotation = MKPointAnnotation()
             annotation.coordinate = selectedPlacemark.coordinate
             self.mapView.addAnnotation(annotation)
-            self.mapView.selectAnnotation(annotation, animated: true)
+            self.mapView.selectAnnotation(annotation, animated: true)            
             
             let annotations = self.mapView.annotations.filter({ !$0.isKind(of: DriverAnnotation.self)})
             
@@ -439,6 +448,8 @@ extension HomeController: UITableViewDelegate,UITableViewDataSource {
         }
     }
 }
+
+// MARK: - RideActionViewDelegate
 
 extension HomeController: RideActionViewDelegate {
     func uploadTrip(_ view: RideActionView) {
@@ -451,5 +462,15 @@ extension HomeController: RideActionViewDelegate {
                 print("Failed to upload trip with \(error.localizedDescription)")
             }
         }
+    }
+}
+
+// MARK: - PickupControllerDelegate
+
+extension HomeController: PickupControllerDelegate {
+    
+    func didAcceptTrip(_ trip: Trip) {
+        self.trip?.state = .accepted
+        self.dismiss(animated: true, completion: nil)
     }
 }
