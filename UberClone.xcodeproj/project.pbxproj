@@ -10,6 +10,7 @@
 		202F3AB16B7DE90DC5485702 /* Pods_UberCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05FDD37066A56F83D111CD0 /* Pods_UberCloneTests.framework */; };
 		5CCC6DCF17E9049CD9FB3AC8 /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842CA82F32566016A2B619CC /* Pods_UberClone.framework */; };
 		AE49D967241280680047054C /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE49D966241280680047054C /* Trip.swift */; };
+		AE49D9692413916F0047054C /* PickupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE49D9682413916F0047054C /* PickupController.swift */; };
 		AE51361023F5A08E002B852E /* RideActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51360F23F5A08E002B852E /* RideActionView.swift */; };
 		AE83F2C923C5F8AA007188D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83F2C823C5F8AA007188D8 /* AppDelegate.swift */; };
 		AE83F2CB23C5F8AA007188D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83F2CA23C5F8AA007188D8 /* SceneDelegate.swift */; };
@@ -60,6 +61,7 @@
 		4891417AB3F7E3B50A695EBF /* Pods-UberCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberCloneTests.release.xcconfig"; path = "Target Support Files/Pods-UberCloneTests/Pods-UberCloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		842CA82F32566016A2B619CC /* Pods_UberClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UberClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE49D966241280680047054C /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		AE49D9682413916F0047054C /* PickupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupController.swift; sourceTree = "<group>"; };
 		AE51360F23F5A08E002B852E /* RideActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideActionView.swift; sourceTree = "<group>"; };
 		AE83F2C523C5F8AA007188D8 /* UberClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE83F2C823C5F8AA007188D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				AE83F2F823C5F914007188D8 /* LoginController.swift */,
 				AE83F30123C7853F007188D8 /* SignUpController.swift */,
 				AE83F30723C899A1007188D8 /* HomeController.swift */,
+				AE49D9682413916F0047054C /* PickupController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				AE83F2CB23C5F8AA007188D8 /* SceneDelegate.swift in Sources */,
 				AE49D967241280680047054C /* Trip.swift in Sources */,
 				AE83F30223C7853F007188D8 /* SignUpController.swift in Sources */,
+				AE49D9692413916F0047054C /* PickupController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
